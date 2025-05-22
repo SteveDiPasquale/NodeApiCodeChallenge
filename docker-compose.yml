@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:7
+    container_name: redis-auth
+    restart: always
+    ports:
+      - "6379:6379"
+
+  api:
+    build: .
+    container_name: auth-api
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      ACCESS_TOKEN_SECRET: ${ACCESS_TOKEN_SECRET}
+      ACCESS_TOKEN_EXPIRES_IN: ${ACCESS_TOKEN_EXPIRES_IN}
+      REDIS_URL: ${REDIS_URL} 
+    depends_on:
+      - redis
