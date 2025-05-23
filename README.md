@@ -58,7 +58,7 @@
 ## NPM Packages Used
 
 - **BCrypt:** used for hashing and comparing passwords
-- **DotEnv:** used for levering environment configuration files (.env)
+- **DotEnv:** used for leveraging environment configuration files (.env)
 - **Express:** used for api routing
 - **Express Rate Limit:** used to implement basic rate limiting to limit exposure to brute force attacks. For testing purposes, I set the limits to 15 requests in a 5-minute window.  These should be increased to more reasonable values in a production environment.
 - **Helmet:** used for securing HTTP headers
@@ -68,6 +68,6 @@
 
 ## Other Considerations Not Implemented
 
-1. In a production environment, I would want to enforce HTTPS traffic. I chose not to implement this due to time constraints and because it seemed lie overkill for a demo project.
+1. In a production environment, I would want to enforce HTTPS traffic. I chose not to implement this due to time constraints and because it seemed like overkill for a demo project.
 2. If there were other endpoints taking in user input, I would want to add logic to sanitize the inputs to prevent injection attacks. 
 3. In this solution, I am simply returning a short-lived access token. Given more time, I would want to add refresh token functionality to extend the user's session without requiring re-authentication.
